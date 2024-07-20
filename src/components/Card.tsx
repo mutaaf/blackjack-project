@@ -10,10 +10,10 @@ const Card: React.FC<CardProps> = ({ card }) => {
   return (
     <div className="relative w-24 h-36 m-2">
       <Image
-        src={card.image}
+        src={card.image ? card.image : ''}
         alt={`${card.value} of ${card.suit}`}
         layout="fill"
-        objectFit="contain"
+        style={{ objectFit: 'contain' }}
         className="rounded-lg shadow-md"
       />
     </div>
