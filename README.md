@@ -4,7 +4,7 @@ Welcome to the most thrilling Blackjack game this side of the internet! 🌟
 
 ## 🚀 Quick Start
 
-1. Clone this repo: `git clone https://github.com/yourusername/blackjack-bonanza.git`
+1. Clone this repo: `git clone https://github.com/mutaaf/blackjack-project.git`
 2. Install dependencies: `npm install`
 3. Start the game: `npm run dev`
 4. Open `http://localhost:3000` in your browser
