@@ -9,13 +9,20 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ card }) => {
   return (
     <div className="relative w-24 h-36 m-2">
-      <Image
-        src={card.image ? card.image : ''}
-        alt={`${card.value} of ${card.suit}`}
-        layout="fill"
-        style={{ objectFit: 'contain' }}
-        className="rounded-lg shadow-md"
-      />
+      {card.image ? (
+        <Image
+          src={card.image}
+          alt={`${card.value} of ${card.suit}`}
+          width={96}
+          height={144}
+          layout="responsive"
+          className="rounded-lg shadow-md"
+        />
+      ) : (
+        <div className="w-full h-full bg-gray-200 rounded-lg shadow-md flex items-center justify-center">
+          <span className="text-lg font-bold">{card.value} {card.suit}</span>
+        </div>
+      )}
     </div>
   );
 };

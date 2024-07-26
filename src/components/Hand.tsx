@@ -12,8 +12,8 @@ const Hand: React.FC<HandProps> = ({ hand, title }) => {
     <div className="mb-4">
       <h2 className="text-xl font-bold mb-2">{title} (Value: {hand.value})</h2>
       <div className="flex flex-wrap">
-        {hand.cards.map((card) => (
-          <Card key={card.code} card={card} />
+        {hand.cards.map((card, index) => (
+          <Card key={`${card.code}-${index}`} card={card} />
         ))}
       </div>
     </div>

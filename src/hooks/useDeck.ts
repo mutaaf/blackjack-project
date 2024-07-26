@@ -17,22 +17,14 @@ export const useDeck = () => {
   }, []);
 
   const drawCards = useCallback(async (deckId: string, count: number): Promise<Card[]> => {
-    try {
-      return await deckService.drawCards(deckId, count);
-    } catch (error) {
-      console.error('Error drawing cards:', error);
-      throw error;
-    }
+    const cards = await deckService.drawCards(deckId, count);
+    console.log('Drawn cards:', cards);
+    return cards;
   }, []);
 
   const shuffleDeck = useCallback(async () => {
     if (deckId) {
-      try {
-        await deckService.shuffleDeck(deckId);
-      } catch (error) {
-        console.error('Error shuffling deck:', error);
-        throw error;
-      }
+      await deckService.shuffleDeck(deckId);
     } else {
       console.error('Cannot shuffle deck: deckId is null');
     }

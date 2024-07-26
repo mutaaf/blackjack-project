@@ -40,6 +40,17 @@ describe('useDeck', () => {
     expect(console.error).toHaveBeenCalledWith('Error initializing deck:', expect.any(Error));
   });
 
+  it('does not shuffle when deckId is null', async () => {
+    const { result } = renderHook(() => useDeck());
+
+    await act(async () => {
+      await result.current.shuffleDeck();
+    });
+
+    expect(deckService.shuffleDeck).not.toHaveBeenCalled();
+    expect(console.error).toHaveBeenCalledWith('Cannot shuffle deck: deckId is null');
+  });
+
   it('draws cards from the deck', async () => {
     const mockCards = [
       { value: 'KING', suit: 'HEARTS', code: 'KH', image: '' },
