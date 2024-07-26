@@ -49,7 +49,7 @@ Watch those tests pass like a pro card counter! 🃏🧮
 
 We use several tools to maintain code quality and consistency:
 
-- **Husky**: We use Husky to manage git hooks. Before each commit, Prettier will automatically format staged files. Before each push, all tests will be run.
+- **Husky**: We use Husky (v4) to manage git hooks. Before each commit, Prettier will automatically format staged files. Before each push, all tests will be run.
 
 - **Prettier**: We use Prettier for code formatting. You can run Prettier manually with:
 
@@ -70,6 +70,18 @@ We use several tools to maintain code quality and consistency:
   ```
 
 Please ensure all tests pass before submitting a pull request!
+
+To set up the development environment:
+
+1. Clone the repository
+2. Run `npm install` to install dependencies
+3. You're ready to go! The pre-commit and pre-push hooks will run automatically.
+
+If Husky hooks are not running, you may need to manually set them up:
+
+```bash
+node node_modules/husky/bin/install.js
+```
 
 ## 🤝 Contributing
 
